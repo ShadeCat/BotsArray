@@ -22,7 +22,7 @@ public class BoysArray {
                 .filter(x -> x.getAge() >= 18)
                 .distinct().limit(4)
                 .sorted(Comparator.comparing(Boy::getName))
-                .collect((Collectors.groupingBy((p) -> p.getName(), Collectors.counting())));
+                .collect((Collectors.groupingBy(Boy::getName, Collectors.counting())));
         System.out.println(boysMap);
 
     }
