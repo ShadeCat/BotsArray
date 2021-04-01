@@ -20,8 +20,9 @@ public class BoysArray {
         }};
         Map<Object, Long> boysMap = boys.stream()
                 .filter(x -> x.getAge() >= 18)
-                .distinct().limit(4)
+                .distinct()
                 .sorted(Comparator.comparing(Boy::getName))
+                .limit(4)
                 .collect((Collectors.groupingBy(Boy::getName, Collectors.counting())));
         System.out.println(boysMap);
 
